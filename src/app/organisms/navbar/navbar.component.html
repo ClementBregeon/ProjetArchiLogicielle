@@ -1,0 +1,26 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+  <a class="navbar-brand" href="#">Mon Site de Fleurs</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav"
+    aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <app-image [imageUrl]="link" [imageAlt]="'Le goat'" (mouseup)="togglePopup()" class="small-image"></app-image>
+
+  <div class="collapse navbar-collapse" id="navbarNav">
+    <ul class="navbar-nav">
+      <li class="nav-item" *ngFor="let menuItem of menuItems">
+        <a class="nav-link" [routerLink]="menuItem.route">{{ menuItem.label }}</a>
+      </li>
+      <ng-container *ngIf="compte === 'admin'">
+        <li class="nav-item">
+          <a class="nav-link" [routerLink]="'/gestion'">Gestion</a>
+        </li>
+      </ng-container>
+    </ul>
+  </div>
+  <div class="popup" [ngClass]="{'popup-visible': popupVisible}">
+    <!-- Contenu de la popup ici -->
+    <app-button [name]="'Changer d\'utilisateur'" (buttonClick)="onButtonClick()"></app-button>
+    <button (click)="togglePopup()">Fermer</button>
+  </div>
+</nav>

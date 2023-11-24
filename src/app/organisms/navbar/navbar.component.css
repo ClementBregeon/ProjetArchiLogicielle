@@ -1,0 +1,15 @@
+.popup {
+    position: absolute;
+    top: 60px; /* Ajustez la position verticale selon vos besoins */
+    left: 0;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    padding: 15px;
+    display: none;
+    z-index: 1000;
+  }
+  
+  .popup-visible {
+    display: block;
+  }
+  

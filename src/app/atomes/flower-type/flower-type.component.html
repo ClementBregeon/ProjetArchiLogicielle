@@ -1,0 +1,5 @@
+<li>
+    <span class="caption">{{ pokemon.name }}</span>
+    <app-image [imageUrl]="pokemon.imageURL" [imageAlt]="'Image du Pokémon ' + pokemon.name" class="full-image"></app-image>
+    <app-button *ngIf="showDeleteButton" [name]="'Supprimer'" (buttonClick)="onButtonClick()"></app-button>
+</li>

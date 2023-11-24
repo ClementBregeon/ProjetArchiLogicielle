@@ -1,0 +1,13 @@
+<!-- flower-types.component.html -->
+
+<h2>Liste des Fleurs</h2>
+<div class="flower-table">
+  <div *ngFor="let pokemon of flowerTypes; let i = index" class="flower-item">
+    <app-flower-type
+      [pokemon]="pokemon"
+      [index]="i"
+      (deleteClick)="onDeleteFlower($event)"
+      [showDeleteButton]="showDeleteButton"
+    ></app-flower-type>
+  </div>
+</div>
