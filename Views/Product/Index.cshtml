@@ -1,0 +1,16 @@
+﻿@model List<Product>
+
+<h2>Products</h2>
+
+@foreach (var product in Model)
+{
+    <div>
+        <h3>@product.Name</h3>
+        <p>Price: @product.Price</p>
+        <p>Stock: @product.StockQuantity</p>
+        <form asp-controller="Product" asp-action="AddToCart" method="post">
+            <input type="hidden" name="id" value="@product.Id" />
+            <input type="submit" value="Add to Cart" />
+        </form>
+    </div>
+}

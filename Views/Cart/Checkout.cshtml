@@ -1,0 +1,27 @@
+﻿@model List<CartItem>
+
+@{
+    var configuration = ViewContext.HttpContext.RequestServices.GetRequiredService<IConfiguration>();
+}
+
+<h2>Checkout</h2>
+
+<form action="/Cart/Checkout" method="post">
+    <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+            data-key="@configuration["Stripe:PublishableKey"]"
+            data-description="Paiement de produits"
+            data-amount="@((int)(Model.Sum(item => item.Price * item.Quantity) * 100))"
+            data-locale="auto"
+            data-currency="usd"
+            data-label="Payer avec Stripe">
+    </script>
+</form>
+
+@foreach (var item in Model)
+{
+    <div>
+        <h3>@item.ProductName</h3>
+        <p>Price: @item.Price</p>
+        <p>Quantity: @item.Quantity</p>
+    </div>
+}
