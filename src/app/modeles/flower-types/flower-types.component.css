@@ -1,0 +1,14 @@
+.flower-table {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  
+  .flower-item {
+    width: calc(33.33% - 10px); /* 10px pour la marge entre les éléments */
+    margin: 5px;
+    border: 1px solid black;
+    box-sizing: border-box; /* Inclut la bordure et le rembourrage dans la largeur/hauteur totale */
+    list-style-type: none;
+  }
+  
+  
