@@ -77,7 +77,7 @@ namespace Backend
             services.AddCors(options =>
             {
                 options.AddPolicy("AllowAngularFrontend",
-                    builder => builder.WithOrigins("http://localhost:4200") // Remplacez cela par l'URL de votre frontend Angular
+                    builder => builder.WithOrigins("http://localhost:4200")
                                       .AllowAnyHeader()
                                       .AllowAnyMethod());
             });

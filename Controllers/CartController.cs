@@ -1,4 +1,4 @@
-﻿using Backend.Data;
+using Backend.Data;
 using Microsoft.AspNetCore.Mvc;
 using Backend.Models;
 using Stripe;
@@ -34,7 +34,6 @@ namespace Backend.Controllers
             var stripeSecretKey = _configuration["Stripe:SecretKey"];
             var stripe = new Stripe.StripeClient(stripeSecretKey);
 
-            // Créez une charge avec Stripe
             var options = new ChargeCreateOptions
             {
                 Amount = (int)(cart.Sum(item => item.Price * item.Quantity) * 100), // Convertir en centimes
@@ -45,8 +44,6 @@ namespace Backend.Controllers
 
             var service = new ChargeService(stripe);
             var charge = service.Create(options);
-
-            // Le paiement a réussi, vous pouvez mettre à jour la base de données ou effectuer d'autres actions nécessaires.
 
             // Effacez le panier après le paiement
             SaveCart(new List<CartItem>());

@@ -6,12 +6,12 @@ import { Observable } from 'rxjs';
   providedIn: 'root',
 })
 export class BackendService {
-  private baseUrl = 'https://localhost:4200'; // Remplacez par l'URL de votre backend
+  private baseUrl = 'https://localhost:7199'; // Remplacez par l'URL de votre backend
 
   constructor(private http: HttpClient) {}
 
-  getProducts(): Observable<any> {
-    return this.http.get(`${this.baseUrl}/product`);
+  getAllProducts(): Observable<any> {
+    return this.http.get(`${this.baseUrl}/api/ApiController.cs`);
   }
 
   // Ajoutez d'autres méthodes pour les opérations CRUD ou d'autres appels API
