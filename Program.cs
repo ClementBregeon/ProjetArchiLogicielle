@@ -1,6 +1,8 @@
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.DependencyInjection;
 using Backend.Data;
 
 namespace Backend
@@ -79,9 +81,19 @@ namespace Backend
                                       .AllowAnyHeader()
                                       .AllowAnyMethod());
             });
+            services.AddDbContext<ApplicationDbContext>(options =>
+                options.UseNpgsql(Configuration.GetConnectionString("DefaultConnection"))
+            );
         }
 
-        public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
+        public IConfiguration Configuration { get; }
+
+        public Program(IConfiguration configuration)
+        {
+            Configuration = configuration;
+        }
+
+    public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
             app.UseSession();
             app.UseCors("AllowAngularFrontend");

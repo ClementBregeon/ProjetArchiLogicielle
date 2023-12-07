@@ -516,3 +516,11 @@ C:\Users\mehdi\source\repos\Backend\obj\Debug\net6.0\refint\ProjetECommerce.dll
 C:\Users\mehdi\source\repos\Backend\obj\Debug\net6.0\ProjetECommerce.pdb
 C:\Users\mehdi\source\repos\Backend\obj\Debug\net6.0\ProjetECommerce.genruntimeconfig.cache
 C:\Users\mehdi\source\repos\Backend\obj\Debug\net6.0\ref\ProjetECommerce.dll
+C:\Users\mehdi\source\repos\Backend\bin\Debug\net6.0\angular.json
+C:\Users\mehdi\source\repos\Backend\bin\Debug\net6.0\package-lock.json
+C:\Users\mehdi\source\repos\Backend\bin\Debug\net6.0\package.json
+C:\Users\mehdi\source\repos\Backend\bin\Debug\net6.0\tsconfig.app.json
+C:\Users\mehdi\source\repos\Backend\bin\Debug\net6.0\tsconfig.json
+C:\Users\mehdi\source\repos\Backend\bin\Debug\net6.0\tsconfig.spec.json
+C:\Users\mehdi\source\repos\Backend\bin\Debug\net6.0\Npgsql.dll
+C:\Users\mehdi\source\repos\Backend\bin\Debug\net6.0\Npgsql.EntityFrameworkCore.PostgreSQL.dll
