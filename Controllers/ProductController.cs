@@ -3,9 +3,12 @@ using Microsoft.AspNetCore.Mvc;
 using Backend.Models;
 using System.Text;
 using System.Text.Json;
+using Microsoft.EntityFrameworkCore;
 
 namespace Backend.Controllers
 {
+    [Route("api/[controller]")]
+    [ApiController]
     public class ProductController : Controller
     {
         private readonly ApplicationDbContext _context;
@@ -21,13 +24,43 @@ namespace Backend.Controllers
             return View(products);
         }
 
-        public IActionResult AddToCart(int id)
+        [HttpGet]
+        public async Task<ActionResult<IEnumerable<Product>>> GetAllProducts()
+        {
+            var products = await _context.Product.ToListAsync();
+
+            if (products == null || products.Count == 0)
+            {
+                return NotFound();
+            }
+
+            return Ok(products);
+        }
+
+        [HttpGet("{id}")]
+        public async Task<IActionResult> GetProduct(Guid id)
+        {
+            if (id == Guid.Empty)
+            {
+                return BadRequest("Invalid ID");
+            }
+
+            var product = await _context.Product.FirstOrDefaultAsync(p => p.Id == id);
+
+            if (product == null)
+            {
+                return NotFound("Product not found");
+            }
+
+            return Ok(product);
+        }
+
+        public IActionResult AddToCart(Guid id)
         {
             var product = _context.Product.Find(id);
 
             if (product == null || product.StockQuantity == 0)
             {
-                // Gérer le cas où le produit n'est pas trouvé ou est en rupture de stock.
                 return RedirectToAction("Index");
             }
 
@@ -42,7 +75,8 @@ namespace Backend.Controllers
             {
                 cart.Add(new CartItem
                 {
-                    ProductId = id,
+                    Id = Guid.NewGuid(),
+                    ProductId = Guid.NewGuid(),
                     ProductName = product.Name,
                     Price = product.Price,
                     Quantity = 1
@@ -56,7 +90,6 @@ namespace Backend.Controllers
 
         private List<CartItem> GetCart()
         {
-            // Utiliser la session pour stocker le panier (vous pouvez également utiliser une base de données).
             if (HttpContext.Session.TryGetValue("Cart", out var cartData))
             {
                 var cartJson = Encoding.UTF8.GetString(cartData);

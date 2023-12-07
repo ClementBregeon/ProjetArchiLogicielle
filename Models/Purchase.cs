@@ -1,7 +1,7 @@
-﻿namespace Backend.Models
+namespace Backend.Models
 {
     public class Purchase
     {
-        public int Id { get; set; }
+        public Guid Id { get; set; }
     }
 }
