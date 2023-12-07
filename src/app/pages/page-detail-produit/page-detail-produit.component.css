@@ -1,0 +1,36 @@
+/* styles.css (ou votre fichier de style préféré) */
+.pokemon-details {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.pokemon-details-title {
+    color: #333;
+    font-size: 1.5em;
+    margin-bottom: 20px;
+}
+
+.pokemon-detail-item {
+    margin-bottom: 15px;
+}
+
+.detail-label {
+    font-weight: bold;
+    margin: 0;
+    color: #555;
+}
+
+.detail-value {
+    margin: 0;
+}
+
+.full-image {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+

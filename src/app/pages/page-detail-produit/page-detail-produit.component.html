@@ -1,0 +1,14 @@
+<!-- page-detail-produit.component.html -->
+<div class="pokemon-details">
+    <h2 class="pokemon-details-title">Détails du Pokémon</h2>
+    <div class="pokemon-detail-item">
+        <p class="detail-label">Nom:</p>
+        <p class="detail-value">{{ pokemon.name }}</p>
+    </div>
+    <div class="pokemon-detail-item">
+        <app-image [imageUrl]="pokemon.imageURL" [imageAlt]="'Image du Pokémon ' + pokemon.name" class="full-image"></app-image>
+    </div>
+    <div class="pokemon-detail-item">
+        <app-button [name]="'Retour'" (buttonClick)="onClick()"></app-button>
+    </div>
+</div>

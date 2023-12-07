@@ -1,10 +1,10 @@
-.caption {
-    text-align: center;
-    font-weight: bold;
-    margin-top: 10px; /* Ajoutez une marge en haut pour séparer le texte du bord de la case */
-  }
+  .caption {
+      text-align: center;
+      font-weight: bold;
+      margin-top: 10px; /* Ajoutez une marge en haut pour séparer le texte du bord de la case */
+    }
 
-  :host {
-    display: block; /* Assurez-vous que l'élément flower-type est affiché comme un bloc */
-  }
-  
+    :host {
+      display: block; /* Assurez-vous que l'élément flower-type est affiché comme un bloc */
+    }
+    

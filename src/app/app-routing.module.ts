@@ -10,19 +10,16 @@ import { PageProduitsComponent } from './pages/page-produits/page-produits.compo
 import { PageAccueilComponent } from './pages/page-accueil/page-accueil.component';
 import { PagePanierComponent } from './pages/page-panier/page-panier.component';
 import { PageGestionProduitsComponent } from './pages/page-gestion-produits/page-gestion-produits.component';
+import { PageDetailProduitComponent } from './pages/page-detail-produit/page-detail-produit.component';
 
 const routes: Routes = [ 
-  { path: 'button', component: ButtonComponent},
-  { path: 'label', component: LabelComponent},
-  { path: 'field', component: FieldComponent},
-  { path: 'image', component: ImageComponent},
-  { path: 'navbar', component: NavbarComponent},
   { path: 'fleurs', component: FlowerTypesComponent},
   { path: 'produits', component: PageProduitsComponent},
   { path: 'accueil', component: PageAccueilComponent},
   { path: '', redirectTo: '/accueil', pathMatch: 'full' },
   { path: 'panier', component: PagePanierComponent},
   { path: 'gestion', component: PageGestionProduitsComponent},
+  { path: 'product/:id', component: PageDetailProduitComponent },
 ];
 
 @NgModule({
