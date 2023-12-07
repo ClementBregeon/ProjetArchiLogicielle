@@ -11,14 +11,13 @@
 using System;
 using System.Reflection;
 
-[assembly: Microsoft.AspNetCore.Identity.UI.UIFrameworkAttribute("Bootstrap5")]
 [assembly: Microsoft.Extensions.Configuration.UserSecrets.UserSecretsIdAttribute("aspnet-Backend-3a85a526-ea94-4ea7-8c9f-fb221487b316")]
-[assembly: System.Reflection.AssemblyCompanyAttribute("Backend")]
-[assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
+[assembly: System.Reflection.AssemblyCompanyAttribute("Backend - Copie")]
+[assembly: System.Reflection.AssemblyConfigurationAttribute("Release")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
 [assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
-[assembly: System.Reflection.AssemblyProductAttribute("Backend")]
-[assembly: System.Reflection.AssemblyTitleAttribute("Backend")]
+[assembly: System.Reflection.AssemblyProductAttribute("Backend - Copie")]
+[assembly: System.Reflection.AssemblyTitleAttribute("Backend - Copie")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
 
 // Généré par la classe MSBuild WriteCodeFragment.

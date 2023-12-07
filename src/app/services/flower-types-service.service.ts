@@ -11,7 +11,7 @@ export class BackendService {
   constructor(private http: HttpClient) {}
 
   getAllProducts(): Observable<any> {
-    return this.http.get(`${this.baseUrl}/api/ApiController.cs`);
+    return this.http.get(`${this.baseUrl}/api/Product`);
   }
 
   // Ajoutez d'autres méthodes pour les opérations CRUD ou d'autres appels API
